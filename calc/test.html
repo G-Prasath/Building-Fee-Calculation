@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #hidden-panel {
+	display: none;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+div {
+	padding: 5px;
+	margin: 5px;
+}
+input,
+select,
+option {
+	padding: 5px;
+}
+select {
+	width: 100px;
+}
+
+    </style>
+</head>
+<body>
+    
+    <form>
+        <div id="drop-down" name="drop-down">
+           <label for="travel">Have you visited Europe before? </label>
+           <select name="travel" id="travel" onChange=showHide()>
+              <option value="1">Yes</option>
+              <option value="0" selected>No</option>
+           </select>
+        </div>
+        <div name="hidden-panel" id="hidden-panel">
+           <label for="country">Name of the country you visited: </label>
+           <input type="text" name="country" id="country"/>
+        </div>
+     </form>
+
+
+
+<script>
+    function showHide() {
+    let travelhistory = document.getElementById('travel')
+    if (travelhistory.value == 1) {
+        document.getElementById('hidden-panel').style.display = 'block'
+    } else {
+        document.getElementById('hidden-panel').style.display = 'none'
+    }
+}
+</script>
+
+
+</body>
+</html>
